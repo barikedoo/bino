@@ -1,0 +1,18 @@
+@mixin centerer () {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin vertical-centerer () {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+@mixin horisontal-centerer () {
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
