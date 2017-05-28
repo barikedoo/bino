@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+
+        &__logo {
+            text-transform: uppercase;
+            border: 1px solid #fff;
+
+
+                &__span{
+                    color: #fff;
+                }
+        }
+}
+
+

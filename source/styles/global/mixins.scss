@@ -16,3 +16,17 @@
     left:50%;
     transform: translateX(-50%);
 }
+
+@mixin placeholder ($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+
+    &::-moz-input-placeholder {
+        color: $color;
+    }
+
+    &::input-placeholder {
+        color: $color;
+    }
+}
