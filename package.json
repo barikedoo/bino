@@ -18,6 +18,7 @@
   "homepage": "https://github.com/barikedoo/findaplaceonline#readme",
   "devDependencies": {
     "browser-sync": "^2.18.12",
+    "font-awesome": "^4.7.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-pug": "^3.3.0",

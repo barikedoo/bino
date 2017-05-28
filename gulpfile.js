@@ -57,6 +57,12 @@ gulp.task('copy:fonts', function(){
     .pipe(gulp.dest('build/fonts'));
 });
 
+            // Copy-fonts-awesome
+gulp.task('copy:fonts-awesome', function() {
+  return gulp.src('node_modules/font-awesome/fonts/*')
+    .pipe(gulp.dest('build/fonts'));
+});
+
             // Copy images
 gulp.task('copy:images', function(){
     return gulp.src('source/images/**/*.*')
@@ -81,7 +87,7 @@ gulp.task('watch', function(){
 
 gulp.task('default',gulp.series(
     'clean',
-    gulp.parallel('templates:compile', 'styles:compile', 'copy'),
+    gulp.parallel('templates:compile', 'styles:compile', 'copy','copy:fonts-awesome'),
     gulp.parallel('watch', 'server')
     )
 );

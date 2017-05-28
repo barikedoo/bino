@@ -1,8 +1,12 @@
 @import "../../node_modules/font-awesome/scss/font-awesome";
 @import "../../node_modules/normalize.scss/normalize";
 
+                // GLOBAL
+@import "global/vars";
 @import "global/mixins";
 @import "global/common";
+@import "global/fonts";
+
 
 
                 // SECTIONS
