@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     // spritesmith = require("gulp-spritesmith"),
     gulpif = require("gulp-if"),
     rimraf = require('rimraf'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    rigger = require('gulp-rigger');
 
                     // watch compile
 gulp.task('sass:watch', function(){
@@ -29,12 +30,10 @@ gulp.watch('build/**/*').on('change', browserSync.reload);
 
 
                     // HTML complile
-gulp.task('templates:compile', function buildHTML() {
-  return gulp.src('source/templates/**/*.pug,.html')
-  .pipe(pug({
-    pretty: true
-  }))
-  .pipe(gulp.dest('build'));
+gulp.task('templates:compile', function () {
+    return gulp.src('source/*.html') //Выберем файлы по нужному пути
+        .pipe(rigger()) //Прогоним через rigger
+        .pipe(gulp.dest('build')); //Выплюнем их в папку build
 });
 
                 // Styles:compile
@@ -69,19 +68,12 @@ gulp.task('copy:images', function(){
     .pipe(gulp.dest('build/images'));
 });
 
-            // TEMP Copy index.html
-gulp.task('copy:index', function(){
-    return gulp.src('source/templates/index.html')
-    .pipe(gulp.dest('build'));
-});
-
                 // Copy
-gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts', 'copy:index'));
+gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts'));
 
             // Watchers
 gulp.task('watch', function(){
-    // gulp.watch('source/templates/**/*.pug,.html', gulp.series('templates:compile'));
-    gulp.watch('source/templates/**/*.html', gulp.series('copy:index'));
+    gulp.watch('source/**/*.html', gulp.series('templates:compile'));
     gulp.watch('source/styles/**/*.scss', gulp.series('styles:compile'));
 });
 
