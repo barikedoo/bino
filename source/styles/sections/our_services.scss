@@ -1,0 +1,62 @@
+.ourServices {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 768px;
+    
+    
+        &__left-block {
+            max-width: 53%;
+            display: flex;
+            flex-wrap: wrap;
+        
+
+        &__h1 {
+            color:#f4f5f9;
+            font-family: $ff-desc;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 3.6px;
+            border-right: 6px solid $main-red;
+            margin-right: 81px;
+            text-transform: uppercase;
+            margin-left: auto;
+            padding-right: 20px;
+            max-height: 36px;
+            line-height: 36px;
+        }
+
+            &__services {
+
+                &__item {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 70%;
+
+                        &__h {
+                            display: inline-block;
+                            font-family: $ff-main-bold;
+                            color: $main-red;
+                            font-weight: 600;
+                            font-size: 18px;
+                            text-transform: uppercase;
+                            padding-bottom: 19px;
+                        }
+
+                        &__p {
+                            color:  #999999;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 29px;
+                        }
+                }
+        }
+        
+    }
+
+        &__right-block {
+            display: block;
+            width: 47%;
+            margin-left: auto;
+            background: url('../../images/our services_right_block.jpg') no-repeat;
+        }
+}
