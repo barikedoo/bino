@@ -5,10 +5,44 @@
     
     
         &__left-block {
-            max-width: 53%;
+            max-width: 55%;
             display: flex;
             flex-wrap: wrap;
+            background: #202020;
+            position: relative;
+
+                &__nav-icons {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 40%;
+                    left: 4%;
+
+                            &__item {
+
+                                border-left: 2px solid #999999;
+                                height: 34px;
+                                margin-bottom: 11px;
+
+                                    &:active {
+                                        border-color: $main-red;
+                                    }
+
+                                    &:hover {
+                                        border-color: $main-red;
+                                    }
+                                }
+                        }
+
+                &__content {
+                    display: flex;
+                    justify-content: space-around;
+
+                }
         
+        &__header {
+            margin-left: auto;
+        }
 
         &__h1 {
             color:#f4f5f9;
@@ -24,13 +58,15 @@
             max-height: 36px;
             line-height: 36px;
         }
+        
 
             &__services {
 
                 &__item {
                     display: flex;
                     flex-wrap: wrap;
-                    width: 70%;
+                    width: 94%;
+
 
                         &__h {
                             display: inline-block;
@@ -40,6 +76,8 @@
                             font-size: 18px;
                             text-transform: uppercase;
                             padding-bottom: 19px;
+                            margin-left: auto;
+                            // text-align: right;
                         }
 
                         &__p {
@@ -47,16 +85,39 @@
                             font-size: 14px;
                             font-weight: 400;
                             line-height: 29px;
+                            margin-bottom: 68px;
+                            text-align: right;
+                            padding-left: 28%;
                         }
                 }
         }
+
+            &__circles {
+                display: flex;
+                flex-direction: column;
+                // flex-wrap: wrap;
+                margin-right: -4%;
+                z-index: 100;
+
+                    &__item {
+                        border-radius: 50%;
+                        background-color:  #f4f5f9;
+                        width: 64px;
+                        height: 64px;
+                        text-align: center;
+                        line-height: 64px;
+                        font-size: 24px;
+                        color: $main-red;
+                        margin-bottom: 165%;
+                    }
+
+            }
         
     }
 
         &__right-block {
             display: block;
-            width: 47%;
-            margin-left: auto;
+            width: 45%;
             background: url('../../images/our services_right_block.jpg') no-repeat;
         }
 }
