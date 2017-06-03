@@ -1,0 +1,93 @@
+.our__pricing {
+    
+    @include section_header;
+            
+            &__plans, .container  {
+                padding-top: 60px;
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-between;
+
+                &__item {
+                    display: block;
+                    min-height: 610px;
+                    width: 32.5%;
+                    background: #f4f5f9;
+
+                        &:hover, &:active {
+                            .our__pricing__plans__item__button{
+                                background: $main-red;
+                                border-color: $main-red;
+                            }
+
+                            .our__pricing__plans__item__header{
+                                background: $main-red;
+                            }
+
+                            .main_price {
+                                color: $main-red;
+                            }
+                        }
+
+
+                        &__header {
+                            display: block;
+                            background: #999999;
+                            width: 100%;
+                            color: #ffffff;
+                            font-size: 24px;
+                            font-family: $ff-main;
+                            text-transform: uppercase;
+                            text-align: center;
+                            min-height: 205px;
+                            line-height: 120px;
+                        }
+
+                        &__price {
+                            display: flex;
+                            flex-direction: column;
+                            border-radius: 50%;
+                            background-color:  #ffffff;
+                            width: 153px;
+                            height: 152px;
+                            border: 10px solid rgba(244, 245, 249, 0.25);
+                            text-align: center;
+                            font-family: $ff-main-bold;
+                            font-size: 39px;
+                            color: #999999;
+                            margin: -80px auto;
+
+                                    span {
+                                        padding-top: 40px;
+                                    }
+
+                                    .per_month {
+                                        padding: 0;
+                                        font-size: 13px;
+                                    }
+                        }
+
+                        &__desc {
+                            font-family: $ff-main;
+                            font-size: 14px;
+                            line-height: 40px;
+                            text-align: center;
+                            color: #999999;
+                            padding-top: 100px;
+                            text-transform: capitalize;
+                        }
+
+                        &__button {
+                            display: block;
+                            margin: 30px auto 0;
+                            font-size: 12px;
+                            width: 23%;
+                            padding: 18px 31px;
+                            background: #999999;
+                            border-color: #999999;
+                            cursor: pointer;
+                        }
+                }
+        }
+}

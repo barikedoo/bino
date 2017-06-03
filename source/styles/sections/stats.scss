@@ -1,0 +1,52 @@
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: #ffffff;
+    background: url('../../images/case_study_bg.jpg')no-repeat;
+    min-height: 511px;
+
+        &__item {
+            width: 16%;
+            position: relative;
+            align-self: center;
+            margin: 0 auto;
+            text-align: center;
+
+                &__image {
+                    border-radius: 50%;
+                    border: 1px solid #ffffff;
+                    width: 110px;
+                    height: 110px;
+                    position: relative;
+                    text-align: center;
+                    font-size: 31px;
+                    margin: 0 auto;
+
+                            i {
+                                display: block;
+                                position: absolute;
+                                top: 37%;
+                                left: 37%
+                            }
+                }
+
+            &__counter {
+                padding-top: 49px;
+                font-family: $ff-desc-bold;
+                font-size: 30px;
+                letter-spacing: 1.5px;
+                line-height: 30px;
+            }
+
+            &__text {
+                font-family: $ff-desc;
+                color: #f4f5f9;
+                text-transform: capitalize;
+                font-size: 18px;
+                padding-top: 10px;
+            }
+
+                
+         }    
+}
