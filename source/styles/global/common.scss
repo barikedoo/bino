@@ -18,8 +18,9 @@ html {
 }
 
 .buttons {
-    background: transparent;
-    border: 1px solid #fff;
+    background: $main-red;
+
+    border: 1px solid $main-red;
     text-transform: uppercase;
     color: #ffffff;
     padding: 22px 0;
@@ -29,8 +30,9 @@ html {
     width: 19.3%;
     margin: 0 10px;
 
-        &:hover{
-            background: $main-red;
-            border-color: $main-red;
+        &:hover {
+            background: lighten($main-red, 10%);
         }
 }
+
+

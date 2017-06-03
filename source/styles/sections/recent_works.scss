@@ -1,32 +1,6 @@
 .recent-works {
 
-        &__header {
-            display: block;
-            left: 50%;
-            margin: 135px auto 0;
-            width: 50%;
-            text-align: center;
-
-                * {
-                    padding-bottom: 29px;
-                }
-
-                &__h2 {
-                    font-family: $ff-desc-bold;
-                    text-transform: uppercase;
-                    color:  #6a6a6a;
-                    font-size: 36px;
-                    letter-spacing: 3.6px;
-                    
-                }
-
-                &__p {
-                    font-family: $ff-main;
-                    color: #999999;
-                    font-size: 14px;
-                    line-height: 29px;
-                }
-        }
+        @include section_header;
 
         &__tags {
             display: flex;

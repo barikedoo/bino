@@ -104,6 +104,16 @@ header {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
+
+                        &__start,&__learn {
+                            border: 1px solid #fff;
+                            background: transparent;
+
+                                            &:hover{
+                                            background: $main-red;
+                                            border-color: $main-red;
+        }
+                        }
                 }
         }
 

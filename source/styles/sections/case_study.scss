@@ -1,0 +1,74 @@
+.case_study {
+    @include section_header;
+
+        background: #f4f5f9;
+        min-height: 1191px;
+        position: relative;
+
+            &__left-block {
+                background-color:  #ffffff;
+                box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+                width: 40%;
+                min-height: 629px;
+                display: block;
+                text-align: center;
+                z-index: 10;
+                position: absolute;
+                left: 12%;
+                top:33.7%;
+            }
+
+            &__image {
+                display: block;
+                max-width: 127px;
+                max-height: 127px;
+                margin: 0 auto;
+                padding-top: 80px;
+            }
+
+            &__h2 {
+                text-transform: uppercase;
+                font-family: $ff-main-bold;
+                font-size: 18px;
+                font-weight: 600;
+                color: #6a6a6a;
+                transform: scaleY(1.0002);
+                padding-top: 50px;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            border-width: 2px;
+                            border-color:  #6a6a6a;
+                            border-style: solid;
+                            width: 41px;
+                            margin: 27px auto 0;
+                        }
+            }
+
+
+            &__p {
+                font-family: $ff-desc;
+                color:  #999999;
+                font-size: 14px;
+                letter-spacing: 1.05px;
+                line-height: 23.995px;
+                padding: 27px 62px 48px;
+            }
+
+            &__button {
+                padding:13px;
+                width: 31%;
+            }
+
+
+            &__right-block {
+                right: 12%;
+                top: 30%!important;
+                width: 585px;
+                height: 722px;
+                position: absolute;
+                background: url(../../images/case_study.jpg) no-repeat;
+            }
+
+}
