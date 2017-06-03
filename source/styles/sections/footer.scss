@@ -1,0 +1,39 @@
+footer {
+    min-height: 480px;
+    background: url('../../images/footer_bg.jpg') no-repeat;
+    position: relative;
+
+        .footer {
+            
+            @include section_header;
+
+            &__header {
+                
+                width: 61%;
+
+                    &__h2 {
+                    color: #ffffff;
+                    text-transform: capitalize;
+                    font-family: $ff-main;
+                    padding-bottom: 10px;
+
+                            span {
+                                font-family: $ff-main-bold;
+                                text-transform: uppercase;
+                            }
+                }
+
+                    &__p {
+                    color: #ffffff;
+                    font-size: 18px;
+                    padding-bottom: 69px;
+                }
+            }
+
+            &__button {
+                font-size: 14px;
+                padding: 20px 50px;
+                width:26.7%;
+            }
+    }
+}

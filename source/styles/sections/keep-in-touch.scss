@@ -1,0 +1,83 @@
+.keep-in-touch {
+    background: #f4f5f9;
+    min-height: 1035px;
+
+    @include section_header;
+
+        &__content {
+            display: flex;
+            // flex-wrap: wrap;
+            padding-top: 67px;
+            min-height: 566px;
+
+                &__left-block {
+                    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+                    padding: 8% 2% 2.7% 7.8%;
+                    background: #ffffff;
+                    width: 30%;
+
+
+                        &__contacts {
+
+                                h3 {
+                                    text-transform: uppercase;
+                                    font-family: $ff-main-bold;
+                                    color: $main-red;
+                                    font-size: 24px;
+                                    padding-bottom: 20px;
+                                }
+
+                                p {
+                                    font-family: $ff-main;
+                                    color: #999999;
+                                    font-size: 18px;
+                                    line-height: 24px;
+                                    padding-bottom: 60px;
+                                }
+                        }
+                }
+
+                &__right-block {
+                    background: #ffffff;
+                    margin-left: 28px;
+                    width: 55%;
+                    box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.1);
+
+                            &__form {
+                                display: flex;
+                                flex-direction: column;
+                                width: 70%;
+                                padding: 10% 16%;
+
+                                
+                                    input, textarea {
+                                       margin: 10px;
+                                       border: none;
+                                       border-bottom: 1px solid #999999;
+                                       font-family: $ff-main;
+                                       font-size: 14px;
+                                       line-height: 50px;
+                                       color: #999999;
+                                       
+                                            &:focus, &:active {
+                                                color: #999999;
+                                                font-size: 18px;
+                                                outline: none;
+                                                @include placeholder (transparent);
+                                            }
+                                       
+                                    }
+
+                                    .form-button {
+                                        color: #ffffff;
+                                        font-size: 14px;
+                                        padding: 0;
+                                        width: 37%;
+                                        line-height: 40px;
+                                        margin: 15px 0 0 10px;
+                                    }
+                                }
+                            }
+                }
+        }
+
