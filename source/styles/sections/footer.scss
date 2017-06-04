@@ -35,5 +35,24 @@ footer {
                 padding: 20px 50px;
                 width:26.7%;
             }
+            
+        &__socials-button-down, &__socials-button-up {
+            border-radius: 50%;
+            box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.25);
+            width: 53px;
+            height: 53px;
+            text-align: center;
+            line-height: 53px;
+            background: $main-red;
+            color: #ffffff;
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+
+                &:hover {
+                    background: lighten($main-red, 10%);
+                }
+        }
     }
+
 }

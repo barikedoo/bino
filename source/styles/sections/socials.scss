@@ -1,0 +1,32 @@
+.socials {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 90px;
+    background: #202020;
+
+            &__buttons {
+                line-height: 90px;
+                font-size: 20px;
+
+                    a {
+                        padding: 0 5px;
+                        color: #999999;
+
+                        &:hover {
+                            color: $main-red;
+                            cursor: pointer;
+                        }
+                    }
+
+            }
+
+            &__copyright {
+                color: #999999;
+                font-size: 14px;
+                font-family: $ff-main;
+                line-height: 90px;
+            }
+
+}
