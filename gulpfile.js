@@ -1,14 +1,18 @@
+// 'use strict';
+
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
+    prefixer = require('gulp-autoprefixer'),
     pug = require('gulp-pug'),
     browserSync = require('browser-sync').create(),
     // spritesmith = require("gulp-spritesmith"),
     gulpif = require("gulp-if"),
     rimraf = require('rimraf'),
     rename = require('gulp-rename'),
-    // autoprefixer = require('gulp-autoprefixer'),
-    rigger = require('gulp-rigger');
+    uglify = require('gulp-uglify'),
+    autoprefixer = require('gulp-autoprefixer'),
+    rigger = require('gulp-rigger'),
+    reload = browserSync.reload;
 
                     // watch compile
 gulp.task('sass:watch', function(){
@@ -32,17 +36,26 @@ gulp.watch('build/**/*').on('change', browserSync.reload);
 
                     // HTML complile
 gulp.task('templates:compile', function () {
-    return gulp.src('source/*.html') //Выберем файлы по нужному пути
-        .pipe(rigger()) //Прогоним через rigger
-        .pipe(gulp.dest('build')); //Выплюнем их в папку build
+    return gulp.src('source/*.html') 
+        .pipe(rigger()) 
+        .pipe(gulp.dest('build')); 
 });
 
                 // Styles:compile
 gulp.task('styles:compile', function () {
   return gulp.src('source/styles/main.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(prefixer())
     .pipe(rename('main.min.css'))
     .pipe(gulp.dest('build/css'));
+});
+
+                // JS compile
+gulp.task('js:compile', function () {
+    return gulp.src('source/js/**.js')
+        .pipe(rigger())
+        .pipe(uglify())
+        .pipe(gulp.dest('build/js'));
 });
 
                 // Delete
@@ -54,6 +67,12 @@ gulp.task('clean', function del(cb) {
 gulp.task('copy:fonts', function(){
     return gulp.src('source/fonts/**/*.*')
     .pipe(gulp.dest('build/fonts'));
+});
+
+            // Copy vendors
+gulp.task('copy:vendors', function(){
+    return gulp.src('vendor/**/*.*')
+    .pipe(gulp.dest('build/vendor'));
 });
 
             // Copy-fonts-awesome
@@ -69,17 +88,19 @@ gulp.task('copy:images', function(){
 });
 
                 // Copy
-gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts'));
+gulp.task('copy', gulp.parallel('copy:images', 'copy:fonts','copy:fonts-awesome','copy:vendors'));
 
             // Watchers
 gulp.task('watch', function(){
     gulp.watch('source/**/*.html', gulp.series('templates:compile'));
     gulp.watch('source/styles/**/*.scss', gulp.series('styles:compile'));
+    gulp.watch('source/js/**/*.js', gulp.series('js:compile'));
+
 });
 
 gulp.task('default',gulp.series(
     'clean',
-    gulp.parallel('templates:compile', 'styles:compile', 'copy','copy:fonts-awesome'),
+    gulp.parallel('templates:compile', 'styles:compile', 'js:compile', 'copy'),
     gulp.parallel('watch', 'server')
     )
 );

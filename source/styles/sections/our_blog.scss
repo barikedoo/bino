@@ -2,6 +2,7 @@
     background: #f4f5f9;
     border-top: 4px solid #6a6a6a;
     @include section_header;
+    position: relative;
 
         &__images {
             display: flex;
@@ -9,12 +10,33 @@
             padding-top: 69px;
 
                     &__item {
-                        width: 25%;
+                        max-width: 25%;
+                        overflow: hidden;
                             
                             &__image {
                                 width: 100%;
                                 margin-bottom: -4px;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                    transition: 0.5s;
+                                }
+                                
                             }
                     }
+            &__popup {
+
+                width: 300px;
+                height: 200px;
+                display: block;
+                position: absolute;
+                background: #f4f5f9;
+                color: #6a6a6a;
+                top:55%;
+                left:40%;
+                text-align: center;
+                line-height: 200px;
+                border: 2px solid
+            }    
         }
 }

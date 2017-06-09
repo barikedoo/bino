@@ -31,12 +31,16 @@
 
         <div class="keep-in-touch__content__right-block">
 
-            <form action="" class="keep-in-touch__content__right-block__form">
+            <form name="keep-in-touch" action=" " class="keep-in-touch__content__right-block__form cmxform" id="commentForm" method="get">
 
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="text" placeholder="Subject">
-                <textarea type="textarea" placeholder="Message" rows="3" resize="none"></textarea>
+                <input type="text" placeholder="Name" class="form__name" id="cname" required>
+
+                <input type="email" placeholder="Email" class="form__email" id="cemail" required>
+
+                <input type="text" placeholder="Subject" id="ccomment" required>
+
+                <textarea type="textarea" placeholder="Message" rows="3" style="resize:none" required></textarea>
+
                 <input type="submit" class="buttons form-button" value="Send Message">
 
             </form>
