@@ -45,6 +45,11 @@
 
                 &__item {
                     width: 25%;
+                    opacity: 0.5;
+
+                        &:hover {
+                            opacity: 1;
+                        }
                     
                     
                 }

@@ -35,15 +35,15 @@ html {
         }
 }
 
-
-// .our_blog_clicked {
-//     display: block;
-//     height:480px;
-//     width:480px;
-//     background: $main-red;
-//     z-index: 10;
-// }
-
 .is-hidden {
     display: none!important;
+}
+
+.is-active {
+    opacity: 1!important;
+    z-index: 100;
+}
+
+.is-blurred {
+    opacity: 0.5;
 }
